@@ -54,6 +54,7 @@ unicode-linebreak = "0.1"
 unicode-script = "0.5"
 regex = { version = "1", default-features = false, features = ["std", "unicode", "perf"] }
 regex-automata = { version = "0.4", default-features = false, features = ["std", "syntax", "meta", "nfa-pikevm", "unicode"] }
+craft-modal = { path = "../craft-libs/crates/modal", features = ["egui"] }
 
 # text / rendering / formats
 skrifa = "0.47"

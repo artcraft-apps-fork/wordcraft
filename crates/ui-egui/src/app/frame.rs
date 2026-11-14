@@ -151,6 +151,7 @@ impl WordApp {
         if let Some(url) = self.canvas.open_url.take() {
             ctx.open_url(egui::OpenUrl::new_tab(url));
         }
+        crate::modal::paint_overlay(self, ctx);
     }
 
     /// Keep the window title and full-screen state in sync, then record this frame's time.

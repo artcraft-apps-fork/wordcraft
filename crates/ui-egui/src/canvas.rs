@@ -811,6 +811,7 @@ fn prepare_layout(app: &mut WordApp, ui: &Ui, full: Rect) -> std::sync::Arc<DocL
     // While a modal dialog ("Save changes?" too) is up, keys answer it rather than edit the
     // document behind it, also in the frame it opens, before the canvas has given up focus.
     if app.canvas.focused && !app.modal_open() {
+        crate::modal::intercept_canvas_keys(app, ui.ctx());
         crate::keys::canvas_events(app, ui.ctx());
     } else {
         app.canvas.alt_code.clear();
